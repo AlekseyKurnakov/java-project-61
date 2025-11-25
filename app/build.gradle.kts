@@ -24,3 +24,7 @@ java {
         languageVersion.set(JavaLanguageVersion.of(21))
     }
 }
+
+tasks.getByName("run", JavaExec::class) {
+    standardInput = System.`in`
+}

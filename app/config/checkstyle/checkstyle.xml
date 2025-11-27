@@ -5,13 +5,13 @@
 
 <module name="Checker">
 
-    <!-- Правила, которые работают по дереву AST -->
+
     <module name="TreeWalker">
         <module name="Indentation"/>
         <module name="UnusedImports"/>
     </module>
 
-    <!-- Правило длины строки должно быть ПРЯМЫМ ребёнком Checker -->
+    
     <module name="LineLength">
         <property name="max" value="120"/>
     </module>

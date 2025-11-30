@@ -1,9 +1,12 @@
 package hexlet.code;
 
+import hexlet.code.games.Even;
+import hexlet.code.games.Game;
+
 import java.util.Scanner;
 import static hexlet.code.Cli.greetUser;
-import static hexlet.code.Even.playEven;
-import static hexlet.code.Calc.playCalc;
+import static hexlet.code.Engine.run;
+
 
 public class App {
     public static void main(String[] args) {
@@ -19,19 +22,21 @@ public class App {
 
         System.out.println("Your choice: " + playerChoice);
 
+        Game game;
+
         switch (playerChoice) {
             case 1:
                 System.out.println(greetUser(scanner));
                 break;
             case 2:
                 System.out.println(greetUser(scanner));
-                System.out.println(playEven(scanner));
-                break;
-            case 3:
-                System.out.println(greetUser(scanner));
-                System.out.println(playCalc(scanner));
-                break;
+                game = new Even();
+                System.out.println(run(game));
         }
+
+
+
+
 
     }
 }

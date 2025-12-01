@@ -13,6 +13,7 @@ public class Engine {
         int questionCount = 3;
 
         System.out.println(game.getGameRule());
+
         while (questionCount > 0) {
 
             System.out.println(game.getQuestion());
@@ -20,14 +21,16 @@ public class Engine {
             Scanner scanner = new Scanner(System.in);
             game.setPlayerAnswer(scanner);
 
-            if (game.getResult()) {
+            String playerAnswer = game.getPlayerAnswer();
+            String correctAnswer = game.getCorrectAnswer();
+
+            if (playerAnswer.equals(correctAnswer)) {
                 System.out.println("Correct!");
             } else {
-                System.out.println(game.getPlayerAnswer() + " is wrong answer ;(. Correct answer was " + game.getCorrectAnswer() + ".");
+                System.out.println(playerAnswer + " is wrong answer ;(. Correct answer was " + correctAnswer + ".");
                 return "Let's try again, " + getName() + "!";
             }
             questionCount--;
-
 
 
         }

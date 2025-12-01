@@ -2,8 +2,6 @@ package hexlet.code.games;
 
 import java.util.Scanner;
 
-import static hexlet.code.Cli.getName;
-
 public class Even implements Game {
 
     private String playerAnswer;
@@ -14,11 +12,13 @@ public class Even implements Game {
     public String getGameRule() {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
+
     @Override
     public String getQuestion() {
         number = (int) (Math.random() * 100);
         return "Question: " + number;
     }
+
     public String setPlayerAnswer(Scanner scanner) {
         playerAnswer = scanner.nextLine();
         return playerAnswer;
@@ -31,21 +31,13 @@ public class Even implements Game {
         } else {
             correctAnswer = "no";
         }
-        return correctAnswer;
+        return "'" + correctAnswer + "'";
     }
+
     @Override
     public String getPlayerAnswer() {
-        return playerAnswer;
+        return "'" + playerAnswer + "'";
     }
-    @Override
-    public boolean getResult() {
-        boolean result;
-        if (getPlayerAnswer().equals(getCorrectAnswer())) {
-            result = true;
-        } else {
-            result = false;
-        }
-        return result;
-    }
+
 
 }

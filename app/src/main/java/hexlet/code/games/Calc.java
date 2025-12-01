@@ -2,44 +2,48 @@ package hexlet.code.games;
 
 import java.util.Scanner;
 
-import static hexlet.code.Cli.getName;
+public class Calc implements Game {
 
-public class Calc {
-    public static String playCalc(Scanner scanner) {
+    private String playerAnswer;
+    private int correctAnswer;
+    private int operand1;
+    private int operand2;
+    private char operator;
 
-        System.out.println("What is the result of the expression?");
-        int questionCount = 3;
+    @Override
+    public String getGameRule() {
+        return "What is the result of the expression?";
+    }
+
+    @Override
+    public String getQuestion() {
         char[] operators = {'+', '-', '*'};
+        int operatorIndex = (int) (Math.random() * 3);
+        this.operator = operators[operatorIndex];
+        this.operand1 = (int) (Math.random() * 20);
+        this.operand2 = (int) (Math.random() * 20);
+        return "Question: " + operand1 + " " + operator + " " + operand2;
+    }
 
-        while (questionCount > 0) {
+    public String setPlayerAnswer(Scanner scanner) {
+        playerAnswer = scanner.nextLine();
+        return playerAnswer;
+    }
 
-            int operatorIndex = (int) (Math.random() * 3);
-            int operand1 = (int) (Math.random() * 20);
-            int operand2 = (int) (Math.random() * 20);
+    @Override
+    public String getCorrectAnswer() {
+        correctAnswer = switch (operator) {
+            case '+' -> operand1 + operand2;
+            case '-' -> operand1 - operand2;
+            case '*' -> operand1 * operand2;
+            default -> 0;
+        };
+        return "'" + correctAnswer + "'";
+    }
 
-            char operator = operators[operatorIndex];
-
-            int correctAnswer = switch (operator) {
-                case '+' -> operand1 + operand2;
-                case '-' -> operand1 - operand2;
-                case '*' -> operand1 * operand2;
-                default -> 0;
-            };
-
-            System.out.println("Question: " + operand1 + " " + operator + " " +operand2);
-            System.out.print("Your answer: ");
-
-            int playerAnswer = scanner.nextInt();
-            scanner.nextLine();
-
-            if (playerAnswer == correctAnswer) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println(playerAnswer + " is wrong answer ;(. Correct answer was " + correctAnswer + ".");
-                return "Let's try again, " + getName() + "!";
-            }
-            questionCount--;
-        }
-        return "Congratulations, " + getName() + "!";
+    @Override
+    public String getPlayerAnswer() {
+        return "'" + playerAnswer + "'";
     }
 }
+

@@ -8,7 +8,7 @@ public interface Game {
     String getQuestion();
     String getCorrectAnswer();
     String getPlayerAnswer();
-    boolean getResult();
+
 
 
 

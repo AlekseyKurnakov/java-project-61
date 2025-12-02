@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Calc implements Game {
 
-    private String playerAnswer;
     private int correctAnswer;
     private int operand1;
     private int operand2;
@@ -25,10 +24,6 @@ public class Calc implements Game {
         return "Question: " + operand1 + " " + operator + " " + operand2;
     }
 
-    public String setPlayerAnswer(Scanner scanner) {
-        playerAnswer = scanner.nextLine();
-        return playerAnswer;
-    }
 
     @Override
     public String getCorrectAnswer() {
@@ -41,9 +36,5 @@ public class Calc implements Game {
         return "'" + correctAnswer + "'";
     }
 
-    @Override
-    public String getPlayerAnswer() {
-        return "'" + playerAnswer + "'";
-    }
 }
 

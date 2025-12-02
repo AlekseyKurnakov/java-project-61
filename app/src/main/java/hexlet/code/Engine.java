@@ -18,13 +18,14 @@ public class Engine {
 
             System.out.println(game.getQuestion());
             System.out.print("Your answer: ");
-            Scanner scanner = new Scanner(System.in);
-            game.setPlayerAnswer(scanner);
 
-            String playerAnswer = game.getPlayerAnswer();
+            Scanner scanner = new Scanner(System.in);
+            String playerAnswer = scanner.nextLine();
+
+
             String correctAnswer = game.getCorrectAnswer();
 
-            if (playerAnswer.equals(correctAnswer)) {
+            if (("'" + playerAnswer + "'").equals(correctAnswer)) {
                 System.out.println("Correct!");
             } else {
                 System.out.println(playerAnswer + " is wrong answer ;(. Correct answer was " + correctAnswer + ".");

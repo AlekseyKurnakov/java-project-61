@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class GCD implements Game {
 
-    private String playerAnswer;
     private int correctAnswer;
     private int number1;
     private int number2;
@@ -21,10 +20,6 @@ public class GCD implements Game {
         return "Question: " + number1 + " " + number2;
     }
 
-    public String setPlayerAnswer(Scanner scanner) {
-        playerAnswer = scanner.nextLine();
-        return playerAnswer;
-    }
 
     @Override
     public String getCorrectAnswer() {
@@ -36,11 +31,6 @@ public class GCD implements Game {
             }
         }
         return "'" + correctAnswer + "'";
-    }
-
-    @Override
-    public String getPlayerAnswer() {
-        return "'" + playerAnswer + "'";
     }
 }
 

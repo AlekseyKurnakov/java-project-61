@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Even implements Game {
 
-    private String playerAnswer;
     private String correctAnswer;
     private int number;
 
@@ -19,11 +18,6 @@ public class Even implements Game {
         return "Question: " + number;
     }
 
-    public String setPlayerAnswer(Scanner scanner) {
-        playerAnswer = scanner.nextLine();
-        return playerAnswer;
-    }
-
     @Override
     public String getCorrectAnswer() {
         if (number % 2 == 0) {
@@ -34,10 +28,7 @@ public class Even implements Game {
         return "'" + correctAnswer + "'";
     }
 
-    @Override
-    public String getPlayerAnswer() {
-        return "'" + playerAnswer + "'";
-    }
+
 
 
 }

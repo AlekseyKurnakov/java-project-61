@@ -7,4 +7,5 @@
 [Демонстрация игры Calc (asciinema)](https://asciinema.org/a/JUFWB3W23lMqF7fV63mBG9Eb0)
 [Демонстрация игры GCD (asciinema)](https://asciinema.org/a/eD3wDaURiERC5ruM805okfATS)
 [Демонстрация игры Progression (asciinema)](https://asciinema.org/a/cjfUEDuvKX4wkIIkRKaqTpxTb)
+[Демонстрация игры Prime (asciinema)](https://asciinema.org/a/aSbQhwbVwjIGk8gHmEEWYYWBk)
 

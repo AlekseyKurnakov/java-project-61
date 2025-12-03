@@ -15,6 +15,7 @@ public class App {
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit");
 
         Scanner scanner = new Scanner(System.in);
@@ -47,6 +48,11 @@ public class App {
             case 5:
                 System.out.println(greetUser(scanner));
                 game = new Progression();
+                System.out.println(run(game));
+                break;
+            case 6:
+                System.out.println(greetUser(scanner));
+                game = new Prime();
                 System.out.println(run(game));
                 break;
         }

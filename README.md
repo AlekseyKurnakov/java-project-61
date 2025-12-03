@@ -6,3 +6,5 @@
 [Демонстрация игры Even (asciinema)](https://asciinema.org/connect/dc883070-3f58-4fea-8dfe-ba3fab316ccc)
 [Демонстрация игры Calc (asciinema)](https://asciinema.org/a/JUFWB3W23lMqF7fV63mBG9Eb0)
 [Демонстрация игры GCD (asciinema)](https://asciinema.org/a/eD3wDaURiERC5ruM805okfATS)
+[Демонстрация игры Progression (asciinema)](https://asciinema.org/a/cjfUEDuvKX4wkIIkRKaqTpxTb)
+

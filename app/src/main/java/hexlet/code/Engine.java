@@ -20,12 +20,12 @@ public class Engine {
             System.out.print("Your answer: ");
 
             Scanner scanner = new Scanner(System.in);
-            String playerAnswer = scanner.nextLine();
+            String playerAnswer = "'" + scanner.nextLine() + "'";
 
 
             String correctAnswer = game.getCorrectAnswer();
 
-            if (("'" + playerAnswer + "'").equals(correctAnswer)) {
+            if (playerAnswer.equals(correctAnswer)) {
                 System.out.println("Correct!");
             } else {
                 System.out.println(playerAnswer + " is wrong answer ;(. Correct answer was " + correctAnswer + ".");

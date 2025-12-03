@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import java.util.Scanner;
 
 public class Calc implements Game {
 

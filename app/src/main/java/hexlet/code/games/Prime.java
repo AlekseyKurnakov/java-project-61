@@ -18,8 +18,8 @@ public class Prime implements Game {
 
             if (number % index == 0) {
                 quantityOfDivisors++;
-                if (quantityOfDivisors > 2){
-                    break;
+                if (quantityOfDivisors > 2) {
+                    return "Question: " + number;
                 }
 
             }

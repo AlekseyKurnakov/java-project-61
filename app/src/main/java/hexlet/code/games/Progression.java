@@ -12,15 +12,15 @@ public class Progression implements Game {
 
     @Override
     public String getQuestion() {
-        int StartProgression = (int) (Math.random() * 101) + 1;
+        int startProgression = (int) (Math.random() * 101) + 1;
         int progressionStep = (int) (Math.random() * 5) + 1;
         int hiddenNumberIndex = (int) (Math.random() * 10);
         String[] progression = new String[10];
 
         for (int index = 0; index < progression.length; index++) {
 
-            progression[index] = String.valueOf(StartProgression);
-            StartProgression = StartProgression + progressionStep;
+            progression[index] = String.valueOf(startProgression);
+            startProgression = startProgression + progressionStep;
 
             if (index == hiddenNumberIndex) {
                 hiddenNumber = progression[index];

@@ -1,7 +1,5 @@
 package hexlet.code.games;
 
-import java.util.Scanner;
-
 public class GCD implements Game {
 
     private int correctAnswer;

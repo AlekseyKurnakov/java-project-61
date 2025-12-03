@@ -1,13 +1,21 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Game;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
 
 import java.util.Scanner;
+
 import static hexlet.code.Cli.greetUser;
 import static hexlet.code.Engine.run;
 
-
 public class App {
+
+
+
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
@@ -55,11 +63,9 @@ public class App {
                 game = new Prime();
                 System.out.println(run(game));
                 break;
+            default:
+                System.out.println("Incorrect selection. Try again.");
+                break;
         }
-
-
-
-
-
     }
 }

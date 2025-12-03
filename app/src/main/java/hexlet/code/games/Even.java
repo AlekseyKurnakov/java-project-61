@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import java.util.Scanner;
 
 public class Even implements Game {
 
@@ -27,8 +26,4 @@ public class Even implements Game {
         }
         return "'" + correctAnswer + "'";
     }
-
-
-
-
 }

@@ -1,6 +1,5 @@
 package hexlet.code;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 import static hexlet.code.Cli.getName;
@@ -13,7 +12,6 @@ public class Engine {
 
         System.out.println(DESCRIPTION);
 
-        System.out.println(Arrays.deepToString(rounds));
 
         boolean playerWon = true;
 

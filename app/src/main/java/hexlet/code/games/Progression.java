@@ -4,7 +4,6 @@ import hexlet.code.Engine;
 
 public class Progression {
 
-
     private static final String DESCRIPTION = "What number is missing in the progression?";
 
     public static void run() {

@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-
 import hexlet.code.Engine;
 
 public class Even {
@@ -25,7 +24,7 @@ public class Even {
                 correctAnswer = "no";
             }
 
-            rounds[i][0] = "'" + number + "'";
+            rounds[i][0] = String.valueOf(number);
             rounds[i][1] = "'" + correctAnswer + "'";
 
         }

@@ -1,18 +1,14 @@
 package hexlet.code;
 
-import hexlet.code.games.Progression;
-import hexlet.code.games.Prime;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-
 import java.util.Scanner;
 
-import static hexlet.code.Cli.greetUser;
-import static hexlet.code.Engine.run;
+import hexlet.code.games.Even;
+import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 public class App {
-
 
 
     public static void main(String[] args) {
@@ -34,26 +30,26 @@ public class App {
 
         switch (playerChoice) {
             case 1:
-                greetUser();
+                Cli.greetUser();
                 break;
             case 2:
-                greetUser();
+                Cli.greetUser();
                 Even.run();
                 break;
             case 3:
-                greetUser();
+                Cli.greetUser();
                 Calc.run();
                 break;
             case 4:
-                greetUser();
+                Cli.greetUser();
                 GCD.run();
                 break;
             case 5:
-                greetUser();
+                Cli.greetUser();
                 Progression.run();
                 break;
             case 6:
-                greetUser();
+                Cli.greetUser();
                 Prime.run();
                 break;
             default:

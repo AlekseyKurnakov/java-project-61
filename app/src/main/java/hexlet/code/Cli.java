@@ -11,10 +11,11 @@ public class Cli {
         return userName;
     }
 
-    public static String greetUser(Scanner scanner) {
+    public static void greetUser() {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
+        Scanner scanner = new Scanner(System.in);
         userName = scanner.nextLine();
-        return "Hello, " + userName + "!";
+        System.out.print("Hello, " + userName + "!");
     }
 }

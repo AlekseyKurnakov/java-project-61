@@ -1,38 +1,35 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
 
-public class Calc implements Game {
+public class Calc {
 
-    private int correctAnswer;
-    private int operand1;
-    private int operand2;
-    private char operator;
+    private static final String DESCRIPTION = "What is the result of the expression?";
 
-    @Override
-    public String getGameRule() {
-        return "What is the result of the expression?";
-    }
+    public static void run() {
+        String[][] rounds = new String[Engine.ROUNDS][2];
 
-    @Override
-    public String getQuestion() {
-        char[] operators = {'+', '-', '*'};
-        int operatorIndex = (int) (Math.random() * 3);
-        this.operator = operators[operatorIndex];
-        this.operand1 = (int) (Math.random() * 20);
-        this.operand2 = (int) (Math.random() * 20);
-        return "Question: " + operand1 + " " + operator + " " + operand2;
-    }
+        for (int i = 0; i < Engine.ROUNDS; i++) {
+
+            char[] operators = {'+', '-', '*'};
+            int operatorIndex = (int) (Math.random() * 3);
+            char operator = operators[operatorIndex];
+            int operand1 = (int) (Math.random() * 20);
+            int operand2 = (int) (Math.random() * 20);
+
+            int correctAnswer = switch (operator) {
+                case '+' -> operand1 + operand2;
+                case '-' -> operand1 - operand2;
+                case '*' -> operand1 * operand2;
+                default -> 0;
+            };
+
+            rounds[i][0] = operand1 + " " + operator + " " + operand2;
+            rounds[i][1] = "'" + correctAnswer + "'";
 
 
-    @Override
-    public String getCorrectAnswer() {
-        correctAnswer = switch (operator) {
-            case '+' -> operand1 + operand2;
-            case '-' -> operand1 - operand2;
-            case '*' -> operand1 * operand2;
-            default -> 0;
-        };
-        return "'" + correctAnswer + "'";
+        }
+        Engine.run(DESCRIPTION, rounds);
     }
 
 }

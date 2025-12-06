@@ -1,6 +1,5 @@
 package hexlet.code;
 
-import hexlet.code.games.Game;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
 import hexlet.code.games.GCD;
@@ -32,36 +31,30 @@ public class App {
 
         System.out.println("Your choice: " + playerChoice);
 
-        Game game;
 
         switch (playerChoice) {
             case 1:
-                System.out.println(greetUser(scanner));
+                greetUser();
                 break;
             case 2:
-                System.out.println(greetUser(scanner));
-                game = new Even();
-                System.out.println(run(game));
+                greetUser();
+                Even.run();
                 break;
             case 3:
-                System.out.println(greetUser(scanner));
-                game = new Calc();
-                System.out.println(run(game));
+                greetUser();
+                Calc.run();
                 break;
             case 4:
-                System.out.println(greetUser(scanner));
-                game = new GCD();
-                System.out.println(run(game));
+                greetUser();
+                GCD.run();
                 break;
             case 5:
-                System.out.println(greetUser(scanner));
-                game = new Progression();
-                System.out.println(run(game));
+                greetUser();
+                Progression.run();
                 break;
             case 6:
-                System.out.println(greetUser(scanner));
-                game = new Prime();
-                System.out.println(run(game));
+                greetUser();
+                Prime.run();
                 break;
             default:
                 System.out.println("Incorrect selection. Try again.");

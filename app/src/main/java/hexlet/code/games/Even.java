@@ -1,29 +1,36 @@
 package hexlet.code.games;
 
 
-public class Even implements Game {
+import hexlet.code.Engine;
+
+public class Even {
 
     private String correctAnswer;
     private int number;
 
-    @Override
-    public String getGameRule() {
-        return "Answer 'yes' if the number is even, otherwise answer 'no'.";
-    }
+    private static final String DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-    @Override
-    public String getQuestion() {
-        number = (int) (Math.random() * 100);
-        return "Question: " + number;
-    }
+    public static void run() {
+        String[][] rounds = new String[Engine.ROUNDS][2];
+        String correctAnswer;
+        int number = 0;
 
-    @Override
-    public String getCorrectAnswer() {
-        if (number % 2 == 0) {
-            correctAnswer = "yes";
-        } else {
-            correctAnswer = "no";
+        for (int i = 0; i < Engine.ROUNDS; i++) {
+
+            number = (int) (Math.random() * 100);
+
+            if (number % 2 == 0) {
+                correctAnswer = "yes";
+            } else {
+                correctAnswer = "no";
+            }
+
+            rounds[i][0] = "'" + number + "'";
+            rounds[i][1] = "'" + correctAnswer + "'";
+
         }
-        return "'" + correctAnswer + "'";
+        Engine.run(DESCRIPTION, rounds);
+
     }
+
 }

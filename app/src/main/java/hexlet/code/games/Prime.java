@@ -1,41 +1,42 @@
 package hexlet.code.games;
 
-public class Prime implements Game {
+import hexlet.code.Engine;
 
-    private String correctAnswer;
-    private int quantityOfDivisors;
+public class Prime {
 
-    @Override
-    public String getGameRule() {
-        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    }
+    private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-    @Override
-    public String getQuestion() {
-        int number = (int) (Math.random() * 101) + 1;
-        quantityOfDivisors = 0;
-        for (int index = number; index > 0; index--) {
+    public static void run() {
+        String[][] rounds = new String[Engine.ROUNDS][2];
+        int quantityOfDivisors = 0;
+        String correctAnswer;
+        for (int i = 0; i < Engine.ROUNDS; i++) {
 
-            if (number % index == 0) {
-                quantityOfDivisors++;
-                if (quantityOfDivisors > 2) {
-                    return "Question: " + number;
+            int number = (int) (Math.random() * 101) + 1;
+
+            for (int index = number; index > 0; index--) {
+
+                if (number % index == 0) {
+                    quantityOfDivisors++;
+                    if (quantityOfDivisors > 2) {
+                        break;
+                    }
+
                 }
-
             }
+            if (quantityOfDivisors == 2) {
+                correctAnswer = "yes";
+            } else {
+                correctAnswer = "no";
+            }
+
+
+            rounds[i][0] = String.valueOf(number);
+            rounds[i][1] = "'" + correctAnswer + "'";
+
+
         }
+        Engine.run(DESCRIPTION, rounds);
 
-        return "Question: " + number;
     }
-
-    @Override
-    public String getCorrectAnswer() {
-        if (quantityOfDivisors == 2) {
-            correctAnswer = "yes";
-        } else {
-            correctAnswer = "no";
-        }
-        return "'" + correctAnswer + "'";
-    }
-
 }

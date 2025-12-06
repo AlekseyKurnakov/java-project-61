@@ -1,42 +1,42 @@
 package hexlet.code.games;
 
-public class Progression implements Game {
+import hexlet.code.Engine;
 
-    private String correctAnswer;
-    private String hiddenNumber;
+public class Progression {
 
-    @Override
-    public String getGameRule() {
-        return "What number is missing in the progression?";
-    }
 
-    @Override
-    public String getQuestion() {
-        int startProgression = (int) (Math.random() * 101) + 1;
-        int progressionStep = (int) (Math.random() * 5) + 1;
-        int hiddenNumberIndex = (int) (Math.random() * 10);
-        String[] progression = new String[10];
+    private static final String DESCRIPTION = "What number is missing in the progression?";
 
-        for (int index = 0; index < progression.length; index++) {
+    public static void run() {
+        String[][] rounds = new String[Engine.ROUNDS][2];
+        String hiddenNumber = "";
+        String correctAnswer;
+        for (int i = 0; i < Engine.ROUNDS; i++) {
 
-            progression[index] = String.valueOf(startProgression);
-            startProgression = startProgression + progressionStep;
+            int startProgression = (int) (Math.random() * 101) + 1;
+            int progressionStep = (int) (Math.random() * 5) + 1;
+            int hiddenNumberIndex = (int) (Math.random() * 10);
+            String[] progression = new String[10];
 
-            if (index == hiddenNumberIndex) {
-                hiddenNumber = progression[index];
-                progression[index] = "..";
+            for (int index = 0; index < progression.length; index++) {
 
+                progression[index] = String.valueOf(startProgression);
+                startProgression = startProgression + progressionStep;
+
+                if (index == hiddenNumberIndex) {
+                    hiddenNumber = progression[index];
+                    progression[index] = "..";
+
+                }
             }
+
+            correctAnswer = hiddenNumber;
+
+            rounds[i][0] = String.join(" ", progression);
+            rounds[i][1] = "'" + correctAnswer + "'";
+
         }
-
-        return "Question: " + String.join(" ", progression);
+        Engine.run(DESCRIPTION, rounds);
     }
 
-    @Override
-    public String getCorrectAnswer() {
-        correctAnswer = hiddenNumber;
-
-
-        return "'" + correctAnswer + "'";
-    }
 }

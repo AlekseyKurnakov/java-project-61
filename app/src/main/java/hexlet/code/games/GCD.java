@@ -1,36 +1,35 @@
 package hexlet.code.games;
 
-public class GCD implements Game {
+import hexlet.code.Engine;
 
-    private int correctAnswer;
-    private int number1;
-    private int number2;
+public class GCD {
 
-    @Override
-    public String getGameRule() {
-        return "Find the greatest common divisor of given numbers.";
-    }
+    private static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
 
-    @Override
-    public String getQuestion() {
-        this.number1 = (int) (Math.random() * 101);
-        this.number2 = (int) (Math.random() * 101);
-        return "Question: " + number1 + " " + number2;
-    }
+    public static void run() {
+        String[][] rounds = new String[Engine.ROUNDS][2];
+        int correctAnswer = 0;
 
+        for (int i = 0; i < Engine.ROUNDS; i++) {
 
-    @Override
-    public String getCorrectAnswer() {
-        int minNumber = Math.min(number1, number2);
-        for (int gcd = minNumber; gcd > 0; gcd--) {
-            if (number1 % gcd == 0 && number2 % gcd == 0) {
-                correctAnswer = gcd;
-                break;
+            int number1 = (int) (Math.random() * 101);
+            int number2 = (int) (Math.random() * 101);
+
+            int minNumber = Math.min(number1, number2);
+
+            for (int gcd = minNumber; gcd > 0; gcd--) {
+                if (number1 % gcd == 0 && number2 % gcd == 0) {
+                    correctAnswer = gcd;
+                    break;
+                }
             }
+
+            rounds[i][0] = number1 + " " + number2;
+            rounds[i][1] = "'" + correctAnswer + "'";
+
         }
-        return "'" + correctAnswer + "'";
+        Engine.run(DESCRIPTION, rounds);
+
     }
+
 }
-
-
-

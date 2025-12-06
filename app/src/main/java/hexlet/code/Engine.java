@@ -1,42 +1,43 @@
 package hexlet.code;
 
-import hexlet.code.games.Game;
-
+import java.util.Arrays;
 import java.util.Scanner;
 
 import static hexlet.code.Cli.getName;
 
 public class Engine {
 
-    public static String run(Game game) {
+    public static final int ROUNDS = 3;
 
-        int questionCount = 3;
+    public static void run(String DESCRIPTION, String[][] rounds) {
 
-        System.out.println(game.getGameRule());
+        System.out.println(DESCRIPTION);
 
-        while (questionCount > 0) {
+        System.out.println(Arrays.deepToString(rounds));
 
-            System.out.println(game.getQuestion());
+        boolean playerWon = true;
+
+        for (int i = 0; i < ROUNDS; i++) {
+
+            System.out.println("Question: " + rounds[i][0]);
+
             System.out.print("Your answer: ");
 
             Scanner scanner = new Scanner(System.in);
             String playerAnswer = "'" + scanner.nextLine() + "'";
 
-
-            String correctAnswer = game.getCorrectAnswer();
-
-            if (playerAnswer.equals(correctAnswer)) {
+            if (playerAnswer.equals(rounds[i][1])) {
                 System.out.println("Correct!");
             } else {
-                System.out.println(playerAnswer + " is wrong answer ;(. Correct answer was " + correctAnswer + ".");
-                return "Let's try again, " + getName() + "!";
+                System.out.println(playerAnswer + " is wrong answer ;(. Correct answer was " + rounds[i][1] + ".");
+                System.out.println("Let's try again, " + getName() + "!");
+                playerWon = false;
+                break;
             }
-            questionCount--;
-
-
         }
-        return "Congratulations, " + getName() + "!";
-
+        if (playerWon) {
+            System.out.println("Congratulations, " + getName() + "!");
+        }
     }
 
 }

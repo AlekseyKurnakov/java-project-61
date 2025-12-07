@@ -10,6 +10,7 @@ public class Prime {
     public static void run() {
         String[][] rounds = new String[Engine.ROUNDS][2];
         String correctAnswer;
+
         for (int i = 0; i < Engine.ROUNDS; i++) {
 
             int quantityOfDivisors = 0;
@@ -22,7 +23,6 @@ public class Prime {
                     if (quantityOfDivisors > 2) {
                         break;
                     }
-
                 }
             }
             if (quantityOfDivisors == 2) {
@@ -30,12 +30,8 @@ public class Prime {
             } else {
                 correctAnswer = "no";
             }
-
-
             rounds[i][0] = String.valueOf(number);
             rounds[i][1] = "'" + correctAnswer + "'";
-
-
         }
         Engine.run(DESCRIPTION, rounds);
 

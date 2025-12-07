@@ -25,11 +25,8 @@ public class Calc {
                 case '*' -> operand1 * operand2;
                 default -> 0;
             };
-
             rounds[i][0] = operand1 + " " + operator + " " + operand2;
             rounds[i][1] = "'" + correctAnswer + "'";
-
-
         }
         Engine.run(DESCRIPTION, rounds);
     }

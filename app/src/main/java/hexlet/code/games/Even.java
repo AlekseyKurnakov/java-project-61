@@ -4,9 +4,6 @@ import hexlet.code.Engine;
 
 public class Even {
 
-    private String correctAnswer;
-    private int number;
-
     private static final String DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private static final int MAX_NUMBER = 101;
 
@@ -24,13 +21,9 @@ public class Even {
             } else {
                 correctAnswer = "no";
             }
-
             rounds[i][0] = String.valueOf(number);
             rounds[i][1] = "'" + correctAnswer + "'";
-
         }
         Engine.run(DESCRIPTION, rounds);
-
     }
-
 }

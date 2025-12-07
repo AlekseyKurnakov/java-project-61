@@ -14,6 +14,7 @@ public class Progression {
         String[][] rounds = new String[Engine.ROUNDS][2];
         String hiddenNumber = "";
         String correctAnswer;
+
         for (int i = 0; i < Engine.ROUNDS; i++) {
 
             int startProgression = (int) (Math.random() * START_PROGRESSION_MAX_VALUE) + MIN_VALUE;
@@ -29,15 +30,12 @@ public class Progression {
                 if (index == hiddenNumberIndex) {
                     hiddenNumber = progression[index];
                     progression[index] = "..";
-
                 }
             }
-
             correctAnswer = hiddenNumber;
 
             rounds[i][0] = String.join(" ", progression);
             rounds[i][1] = "'" + correctAnswer + "'";
-
         }
         Engine.run(DESCRIPTION, rounds);
     }

@@ -15,4 +15,5 @@ jobs:
           distribution: 'temurin'
 
       - name: Запуск Checkstyle
+        working-directory: ./app
         run: ./gradlew checkstyleMain

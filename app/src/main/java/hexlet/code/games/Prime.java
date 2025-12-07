@@ -8,10 +8,10 @@ public class Prime {
 
     public static void run() {
         String[][] rounds = new String[Engine.ROUNDS][2];
-        int quantityOfDivisors = 0;
         String correctAnswer;
         for (int i = 0; i < Engine.ROUNDS; i++) {
 
+            int quantityOfDivisors = 0;
             int number = (int) (Math.random() * 101) + 1;
 
             for (int index = number; index > 0; index--) {

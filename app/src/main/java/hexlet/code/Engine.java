@@ -8,14 +8,14 @@ public class Engine {
 
     public static final int ROUNDS = 3;
 
-    public static void run(String DESCRIPTION, String[][] rounds) {
+    public static void run(String description, String[][] rounds) {
 
-        System.out.println(DESCRIPTION);
+        System.out.println(description);
 
 
         boolean playerWon = true;
 
-        for (int i = 0; i < ROUNDS; i++) {
+        for (int i = 0; i < Engine.ROUNDS; i++) {
 
             System.out.println("Question: " + rounds[i][0]);
 

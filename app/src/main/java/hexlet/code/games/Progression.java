@@ -5,6 +5,10 @@ import hexlet.code.Engine;
 public class Progression {
 
     private static final String DESCRIPTION = "What number is missing in the progression?";
+    private static final int PROGRESSION_SIZE = 10;
+    private static final int START_PROGRESSION_MAX_VALUE = 101;
+    private static final int PROGRESSION_STEP_MAX_VALUE = 5;
+    private static final int MIN_VALUE = 1;
 
     public static void run() {
         String[][] rounds = new String[Engine.ROUNDS][2];
@@ -12,10 +16,10 @@ public class Progression {
         String correctAnswer;
         for (int i = 0; i < Engine.ROUNDS; i++) {
 
-            int startProgression = (int) (Math.random() * 101) + 1;
-            int progressionStep = (int) (Math.random() * 5) + 1;
-            int hiddenNumberIndex = (int) (Math.random() * 10);
-            String[] progression = new String[10];
+            int startProgression = (int) (Math.random() * START_PROGRESSION_MAX_VALUE) + MIN_VALUE;
+            int progressionStep = (int) (Math.random() * PROGRESSION_STEP_MAX_VALUE) + MIN_VALUE;
+            int hiddenNumberIndex = (int) (Math.random() * PROGRESSION_SIZE);
+            String[] progression = new String[PROGRESSION_SIZE];
 
             for (int index = 0; index < progression.length; index++) {
 

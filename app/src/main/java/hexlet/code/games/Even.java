@@ -8,6 +8,7 @@ public class Even {
     private int number;
 
     private static final String DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static final int MAX_NUMBER = 101;
 
     public static void run() {
         String[][] rounds = new String[Engine.ROUNDS][2];
@@ -16,7 +17,7 @@ public class Even {
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
 
-            number = (int) (Math.random() * 100);
+            number = (int) (Math.random() * MAX_NUMBER);
 
             if (number % 2 == 0) {
                 correctAnswer = "yes";

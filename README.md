@@ -1,14 +1,14 @@
 
 # Brain Games
-Набор консольных мини-игр, выполненный в рамках учебного курса Hexlet.
-Проект демонстрирует базовые принципы разработки на Java: работу с классами, методами, вводом/выводом, а также организацию игрового движка.  
-Игроку предлагается пройти серию логических заданий: проверка чётности числа, арифметика, вычисление НОД, прогрессия и простые числа.
+[![hexlet-check](https://github.com/AlekseyKurnakov/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/AlekseyKurnakov/java-project-61/actions)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=AlekseyKurnakov_java-project-61&metric=sqale_rating)](https://sonarcloud.io/summary/overall?id=AlekseyKurnakov_java-project-61)
 
 ---
 
-## Hexlet tests and linter status:
-[![hexlet-check](https://github.com/AlekseyKurnakov/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/AlekseyKurnakov/java-project-61/actions)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=AlekseyKurnakov_java-project-61&metric=sqale_rating)](https://sonarcloud.io/summary/overall?id=AlekseyKurnakov_java-project-61)
+## О проекте
+Набор консольных мини-игр, выполненный в рамках учебного курса Hexlet.
+Проект демонстрирует базовые принципы разработки на Java: работу с классами, методами, вводом/выводом, а также организацию игрового движка.  
+Игроку предлагается пройти серию логических заданий: проверка чётности числа, арифметика, вычисление НОД, прогрессия и простые числа.
 
 ---
 

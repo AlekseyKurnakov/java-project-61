@@ -1,36 +1,46 @@
 package hexlet.code;
 
 import java.util.Scanner;
-import static hexlet.code.Cli.getName;
 
 public class Engine {
 
     public static final int ROUNDS = 3;
 
     public static void run(String description, String[][] rounds) {
-        System.out.println(description);
-
         Scanner scanner = new Scanner(System.in);
-        boolean playerWon = true;
 
-        for (int i = 0; i < Engine.ROUNDS; i++) {
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
 
-            System.out.println("Question: " + rounds[i][0]);
+        String userName = scanner.nextLine();
+
+        System.out.println("Hello, " + userName + "!");
+
+        if (description != null && !description.isEmpty()) {
+            System.out.println(description);
+        }
+
+        boolean userWon = true;
+
+        for (String[] round : rounds) {
+
+            System.out.println("Question: " + round[0]);
             System.out.print("Your answer: ");
 
-            String playerAnswer = "'" + scanner.nextLine() + "'";
+            String userAnswer = "'" + scanner.nextLine() + "'";
+            String correctAnswer = "'" + round[1] + "'";
 
-            if (playerAnswer.equals(rounds[i][1])) {
+            if (userAnswer.equals(correctAnswer)) {
                 System.out.println("Correct!");
             } else {
-                System.out.println(playerAnswer + " is wrong answer ;(. Correct answer was " + rounds[i][1] + ".");
-                System.out.println("Let's try again, " + getName() + "!");
-                playerWon = false;
+                System.out.println(userAnswer + " is wrong answer ;(. Correct answer was " + correctAnswer + ".");
+                System.out.println("Let's try again, " + userName + "!");
+                userWon = false;
                 break;
             }
         }
-        if (playerWon) {
-            System.out.println("Congratulations, " + getName() + "!");
+        if (userWon && rounds.length > 0) {
+            System.out.println("Congratulations, " + userName + "!");
         }
     }
 

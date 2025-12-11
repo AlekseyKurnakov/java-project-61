@@ -16,13 +16,10 @@ public class Even {
 
             number = (int) (Math.random() * MAX_NUMBER);
 
-            if (number % 2 == 0) {
-                correctAnswer = "yes";
-            } else {
-                correctAnswer = "no";
-            }
+            correctAnswer = number % 2 == 0 ? "yes" : "no";
+
             rounds[i][0] = String.valueOf(number);
-            rounds[i][1] = "'" + correctAnswer + "'";
+            rounds[i][1] = correctAnswer;
         }
         Engine.run(DESCRIPTION, rounds);
     }

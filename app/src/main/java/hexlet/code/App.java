@@ -2,6 +2,7 @@ package hexlet.code;
 
 import java.util.Scanner;
 
+import hexlet.code.games.Greet;
 import hexlet.code.games.Even;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Gcd;
@@ -29,37 +30,34 @@ public class App {
         System.out.println(EXIT + " - Exit");
 
         Scanner scanner = new Scanner(System.in);
-        int playerChoice = scanner.nextInt();
+        int userChoice = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.println("Your choice: " + playerChoice);
+        System.out.println("Your choice: " + userChoice);
 
-        switch (playerChoice) {
+        switch (userChoice) {
             case GREET:
-                Cli.greetUser();
+                Greet.run();
                 break;
             case EVEN:
-                Cli.greetUser();
                 Even.run();
                 break;
             case CALC:
-                Cli.greetUser();
                 Calc.run();
                 break;
             case GCD:
-                Cli.greetUser();
                 Gcd.run();
                 break;
             case PROGRESSION:
-                Cli.greetUser();
                 Progression.run();
                 break;
             case PRIME:
-                Cli.greetUser();
                 Prime.run();
                 break;
+            case EXIT:
+                break;
             default:
-                System.out.println("Incorrect selection. Try again.");
+                System.out.println("Unknown user choice: " + userChoice);
                 break;
         }
     }

@@ -25,7 +25,7 @@ public class Gcd {
                 }
             }
             rounds[i][0] = number1 + " " + number2;
-            rounds[i][1] = String.valueOf(correctAnswer);;
+            rounds[i][1] = String.valueOf(correctAnswer);
         }
         Engine.run(DESCRIPTION, rounds);
 

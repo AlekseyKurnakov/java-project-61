@@ -7,8 +7,8 @@ public class Prime {
     private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     private static final int MAX_NUMBER = 101;
 
-    public static String isPrime(int number) {
-        String result;
+    public static boolean isPrime(int number) {
+        boolean result;
         int quantityOfDivisors = 0;
 
         for (int index = number; index > 0; index--) {
@@ -21,9 +21,9 @@ public class Prime {
             }
         }
         if (quantityOfDivisors == 2) {
-            result = "yes";
+            result = true;
         } else {
-            result = "no";
+            result = false;
         }
         return result;
     }
@@ -36,7 +36,7 @@ public class Prime {
 
             int number = (int) (Math.random() * MAX_NUMBER) + 1;
 
-            correctAnswer = isPrime(number);
+            correctAnswer = isPrime(number) ? "yes" : "no";
 
             rounds[i][0] = String.valueOf(number);
             rounds[i][1] = correctAnswer;

@@ -19,7 +19,6 @@ public class Gcd {
         return gcd;
     }
 
-
     public static void run() {
         String[][] rounds = new String[Engine.ROUNDS][2];
         int correctAnswer = 0;
